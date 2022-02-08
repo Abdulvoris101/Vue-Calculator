@@ -4,11 +4,11 @@
       <div class="">
         <input type="text" class="output ps-3 input-output" @keyup.enter="calc()" v-model="result" @input="validateOutput">
       </div>
-      <div class="operators row ">
-        <div class="button-group  col-lg-3 mb-3 col-sm-3"
+      <div class="operators row">
+        <div class="button-group  col-sm-4 col-lg-3 mb-3 "
          v-for="(operator, index) in operators"
         :key="index">
-          <button class=" ms-1 button-operator"
+          <button class="button-operator"
           @click="input(operator)">
             {{ operator }}
           </button>
@@ -116,6 +116,7 @@ export default {
   border: 2px solid #ccc;
 
 }
+
 .output {
   margin: 0 auto;
   height: 50px;
@@ -127,6 +128,7 @@ export default {
 }
 
 .button-operator {
+  margin-left: 5px;
   padding: 14px 35px;
   background: #f5f5f5;
   border: 1px solid rgb(241, 241, 241);
@@ -169,5 +171,31 @@ export default {
   display: block;
   outline: none;
 }
+@media only screen and (max-width: 700px) {
+  .wrapper {
+    width: 95% !important;
+  }
+  .button-group {
+    width: 25%;
+  }
+  .button-operator {
+    padding: 14px 31px !important;
+  }
+  .row {
+    --bs-gutter-x: 0; 
+  }
+  .btn-number {
+    width: 24%;
+    margin-right: 2px;
+  }
+  
+  .numbers button {
+    padding: 16px 8px !important;
+    margin-bottom: 20px !important;
+  }
+  .btn-large {
+    padding: 10px 20px !important;
 
+  }
+}
 </style>
